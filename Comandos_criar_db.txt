@@ -1,0 +1,28 @@
+create table cliente(
+id int(4) primary key auto_increment,
+nome varchar(30),
+fone varchar(30),
+email varchar(30),
+cpf varchar(13),
+tamanho float(4),
+tipo int(2),
+senha varchar(20));
+create table logistica(
+id int(4) primary key auto_increment,
+producao varchar(30),
+estoque varchar(30),
+producao_qtd varchar(30),
+id_dono int(4),
+foreign key (id_dono) references cliente(id));
+create table plantacao(
+plantas varchar(30),
+solo varchar(30),
+clima varchar(30),
+id_dono int(4),
+foreign key (id_dono) references cliente(id));
+create table veiculos(
+id int(4) primary key auto_increment,
+modelo varchar(30),
+setor varchar(30),
+id_dono int(4),
+foreign key (id_dono) references cliente(id));
